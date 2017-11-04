@@ -10,21 +10,21 @@ public class Calculate {
     private int operator;
     private double num1;
     private double num2;
-    private double result;
-    private int infinite = 0;//1为正，-1为负
+    public double result;
+    public int infinite = 0;//1为正，-1为负
 
-    Calculate(double num1, int operator, double num2){
+    public Calculate(double num1, int operator, double num2){
         this.num1 = num1;
         this.num2 = num2;
         this.operator = operator;
         this.result = calculate(num1,operator,num2);
     }
-    Calculate(double num1, int operator){
+    public Calculate(double num1, int operator){
         this.num1 = num1;
         this.operator = operator;
         this.result = calculate(num1,operator);
     }
-    private double calculate(double num1, int operator, double num2){
+    private double calculate(double num1, int operator, double num2){//二目运算
         double result = 0;
         switch (operator){
             case Operator.PLUS:  result = num1 + num2;break;
@@ -43,7 +43,7 @@ public class Calculate {
         }
         return result;
     }
-    private double calculate(double num1, int operator){
+    private double calculate(double num1, int operator){//一目运算
         double result = 0;
         switch (operator){
             case Operator.SQUARE: result = num1 * num1;break;
